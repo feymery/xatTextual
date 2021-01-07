@@ -1,25 +1,28 @@
-import java.io.IOException
-import java.net.ServerSocket
-import java.net.Socket
-import java.util.logging.Level
-import java.util.logging.Logger
+import java.io.*
+import java.net.*
 
-class MyServerSocket(port: Int) : ServerSocket(port) {
-    val ss = ServerSocket(port)
+class MyServerSocket(port: Int) : ServerSocket() {
+    var serverSocket = ServerSocket()
+    lateinit var clientSocket: MySocket
+
+    init {
+        serverSocket = ServerSocket(port)
+    }
+
     @Throws(IOException::class)
     override fun accept(): Socket? {
         try {
-            return super.accept()
+            clientSocket = MySocket(serverSocket.accept())
         } catch (ex: IOException) {
-            Logger.getLogger(MyServerSocket::class.java.name).log(Level.SEVERE, null, ex)
+            System.err.println(ex)
         }
         return null
     }
     override fun close() {
         try {
-            ss.close()
+            serverSocket.close()
         } catch (ex: IOException) {
-            Logger.getLogger(MyServerSocket::class.java.name).log(Level.SEVERE, null, ex)
+            System.err.println(ex)
         }
     }
 }

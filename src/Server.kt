@@ -1,16 +1,37 @@
-import java.io.*
-import java.util.*
-import kotlin.collections.HashMap
-import kotlin.concurrent.thread
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
+import java.io.PrintWriter
+import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.Executors
 
 
 class Server {
+    val port = 4444
+    val clientsMap = ConcurrentHashMap<String, Handler>()
     @Throws(IOException::class)
     fun main(args: Array<String>){
-        val serverSocket = MyServerSocket(Integer.parseInt(args[0]))
-        println("The server is running...")
-        val users = Collections.synchronizedMap(HashMap<String, PrintWriter>())
-        while (true) {
+        println("The server is running on port $port")
+        var pool = Executors.newFixedThreadPool(500)//nidea de pq funciona
+        MyServerSocket(port).use { listener ->
+            while (true)
+                pool.execute(Handler(listener.accept() as MySocket))
+            }
+        }
+}
+class Handler : Runnable {
+    private var socket: MySocket? = null
+    private val lastMsg = ""
+    private val clientName: String? = null
+
+    constructor(clientSocket: MySocket) {
+        socket = clientSocket
+        val input = BufferedReader(InputStreamReader(socket!!.getInputStream()))
+        val out = PrintWriter(socket!!.getOutputStream(), true)
+    }
+
+    override fun run() {
+        /*while (true) {
             val s = serverSocket.accept()
             thread {
                 var sin = s?.getInputStream()?.bufferedReader()
@@ -30,16 +51,7 @@ class Server {
                 }
                 users.remove(nick)
             }
-        }
-
+            }*/
     }
-
-}
-class Handler : Runnable {
-    val socket = MySocket()
-    override fun run() {
-        try(socket)
-    }
-
 }
 

@@ -7,8 +7,20 @@ import java.util.logging.Level
 import java.util.logging.Logger
 
 
-class MySocket(host: String, port: Int): Socket(){
-    val sc = Socket(host, port)
+class MySocket: Socket{
+    lateinit var sc : Socket
+
+    constructor(host: String, port: Int){
+        try {
+            sc = Socket(host, port)
+        } catch (ex: IOException) {
+            Logger.getLogger(MySocket::class.java.name).log(Level.SEVERE, null, ex)
+        }
+    }
+    constructor(socket: Socket){
+        sc = socket
+    }
+
 
     override fun connect(endpoint: SocketAddress?) {
         try {
