@@ -5,37 +5,95 @@ import java.io.InputStreamReader
 import java.io.PrintWriter
 import java.util.concurrent.*
 import java.util.*
+import java.net.Socket
+import kotlin.concurrent.thread
+
 
 
 
 
 val port = 4000
-public var clients = HashMap<String, Handler>()
-public var clientsMap = Collections.synchronizedMap(clients)
+
 
 @Throws(IOException::class)
-fun main(/*args: Array<String>*/){
+fun main(args: Array<String>) {
+    println("The server is running on port $port")
+    val socketListener = MyServerSocket(port)
+    var clientNumber = 0
+    var logout=false
+    var clients = HashMap<Int, MySocket>()
+    var clientsMap = Collections.synchronizedMap(clients)
+  socketListener.use {
+    while (true) {
+        var socket = socketListener.accept()
+        thread (start=true){
+            clientNumber++
+            var input = BufferedReader(InputStreamReader(socket.getInputStream()))
+            var output = PrintWriter(socket.getOutputStream(), true)
+            output.println("You have joined the chat")
+            clientsMap.put(clientNumber, socket)
+            println(socket)
+            while(!logout){
+                var line = input.readLine()
+                when(line){
+                    "exit" -> {
+                        clientsMap.remove(clientNumber)
+                        /*clientsMap.mapValues { client ->
+                            client.output.print(""">>${clientNumber} has left<<""")
+                            client
+                        }.forEach { client -> client.output.flush() }*/
+                        logout=true
+                        try{
+                            socket.close()
+                        }catch(ex: IOException){
+                            System.err.println(ex)
+                        }
+                    }
+                    else -> { 
+                        println(line)
+                        /*clientsMap.mapValues { client ->
+                        if (!client.clientNumber.equals(clientNumber)) { // mirem que no siguem nosaltres
+                            client.output.print("""	>${clientNumber}: ${line}""")
+                        }
+                        client
+                        }.forEach { client -> client.output.flush() }*/
+
+                    }
+                }
+            }
+        }
+        
+    }
+  }
+}
+   
+
+
+/*fun main(args: Array<String>){
     
     println("The server is running on port $port")
     var pool = Executors.newFixedThreadPool(500)
     MyServerSocket(port).use { listener ->
         while (true)
             pool.execute(Handler(listener.accept()))
+            
         }
     }
 class Handler(clientSocket: MySocket) : Runnable {
     var socket = clientSocket
     var input = BufferedReader(InputStreamReader(socket.getInputStream()))
-    var output = PrintWriter(socket.getOutputStream(), true)
+    var output = PrintWriter(socket.getOutputStream())
     var clientName = ""
     var lastMsg = ""
 
     override fun run() {
+        println("socket: $socket")
+            output.print("holi")
             var username = false
             var logout = false
             while(!username){
                 output.print("Enter your username: ")
-                output.flush()
+                //output.flush()
                 try{
                     clientName = input.readLine()
                     println(clientName)
@@ -46,7 +104,7 @@ class Handler(clientSocket: MySocket) : Runnable {
                     /*clientsMap.stream().mapValues { ms ->
                         ms.out.print(""">>${clientName} has joined the chat<<""")
                         ms
-                    }.forEachOrdered { ms -> ms.out.flush() }*/
+                    }.forEachOrdered { ms -> ms.out.flush() }
                     println(clientName)
                     println("New User: $clientName :)")
                     clientsMap.put(clientName, this)
@@ -67,7 +125,7 @@ class Handler(clientSocket: MySocket) : Runnable {
                         /*clientsMap.mapValues { ms ->
                             ms.out.print(""">>${clientName} has left<<""")
                             ms
-                        }.forEachOrdered { ms -> ms.out.flush() }*/
+                        }.forEachOrdered { ms -> ms.out.flush() }
                         logout=true
                     }
                 }
@@ -80,8 +138,7 @@ class Handler(clientSocket: MySocket) : Runnable {
                     ms.out.print("""	>${clientName}: ${lastMsg}""")
                 }
                 ms
-                }.forEachOrdered { ms -> ms.out.flush() }*/
-                println("holiii")
+                }.forEachOrdered { ms -> ms.out.flush() }
             }
             lastMsg=""
         }
@@ -92,4 +149,4 @@ class Handler(clientSocket: MySocket) : Runnable {
         }
         output.close()
     }
-}
+}*/

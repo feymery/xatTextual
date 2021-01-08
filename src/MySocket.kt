@@ -1,15 +1,19 @@
 import java.io.IOException
 import java.io.InputStream
-import java.io.OutputStream
+import java.io.*
 import java.net.Socket
 import java.net.SocketAddress
 
 
 class MySocket: Socket{
+    var clientSocket: Socket?
+    init{
+        clientSocket=null
+    }
 
     constructor(host: String, port: Int){
         try {
-            var clientSocket = Socket(host, port)
+            clientSocket = Socket(host, port)
         } catch (ex: IOException) {
             System.err.println(ex)
         }
@@ -21,7 +25,7 @@ class MySocket: Socket{
 
     override fun connect(endpoint: SocketAddress) {
         try {
-            clientSocket.connect(endpoint)
+            clientSocket!!.connect(endpoint)
         } catch (ex: IOException) {
             System.err.println(ex)
         }
@@ -29,7 +33,7 @@ class MySocket: Socket{
 
     override fun getInputStream(): InputStream? {
         try {
-            return clientSocket.getInputStream()
+            return clientSocket!!.getInputStream()
         } catch (ex: IOException) {
             System.err.println(ex)
         }
@@ -39,7 +43,7 @@ class MySocket: Socket{
 
     override fun getOutputStream(): OutputStream? {
         try {
-            return clientSocket.getOutputStream()
+            return clientSocket!!.getOutputStream()
         } catch (ex: IOException) {
             System.err.println(ex)
         }
@@ -48,7 +52,7 @@ class MySocket: Socket{
 
     override fun close() {
         try {
-            clientSocket.close()
+            clientSocket!!.close()
         } catch (ex: IOException) {
             System.err.println(ex)
         }
