@@ -33,7 +33,23 @@ fun main(args: Array<String>) {
             output.println("You have joined the chat")
             clientsMap.put(clientNumber, socket)
             println(socket)
-            while(!logout){
+            while (true) {
+                val line = input.readLine()
+                if (line == ".") {
+                    println("Client #$clientNumber closed connection.")
+                    socket.close()
+                    return@thread
+                }
+            println("Client #$clientNumber said: $line")
+            output.println("I heard you say: " + line)
+            }
+        }
+    }
+        
+  }
+}
+
+            /*while(!logout){
                 var line = input.readLine()
                 when(line){
                     "exit" -> {
@@ -41,7 +57,7 @@ fun main(args: Array<String>) {
                         /*clientsMap.mapValues { client ->
                             client.output.print(""">>${clientNumber} has left<<""")
                             client
-                        }.forEach { client -> client.output.flush() }*/
+                        }.forEach { client -> client.output.flush() }
                         logout=true
                         try{
                             socket.close()
@@ -56,16 +72,13 @@ fun main(args: Array<String>) {
                             client.output.print("""	>${clientNumber}: ${line}""")
                         }
                         client
-                        }.forEach { client -> client.output.flush() }*/
+                        }.forEach { client -> client.output.flush() }
 
                     }
                 }
-            }
-        }
-        
-    }
-  }
-}
+            }*/
+    
+
    
 
 
