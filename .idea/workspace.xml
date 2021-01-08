@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2465e37e-2f50-4d59-9c72-644a66b3a57a" name="Default Changelist" comment="mes retocs" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1mbMrdKxoj0PZOCIwq3apE6vMBO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2465e37e-2f50-4d59-9c72-644a66b3a57a" name="Default Changelist" comment="" />
+      <created>1609758039918</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609758039918</updated>
+    </task>
+    <task id="LOCAL-00001" summary="primers passos">
+      <created>1610027686806</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610027686806</updated>
+    </task>
+    <task id="LOCAL-00002" summary="arreglem errors i pre funcio run">
+      <created>1610038994308</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1610038994308</updated>
+    </task>
+    <task id="LOCAL-00003" summary="falta mirar els streams">
+      <created>1610130793097</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610130793097</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="primers passos" />
+    <MESSAGE value="arreglem errors i pre funcio run" />
+    <MESSAGE value="mes retocs" />
+    <MESSAGE value="falta mirar els streams" />
+    <option name="LAST_COMMIT_MESSAGE" value="falta mirar els streams" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="72" width="1089" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610097124052">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="0" y="72" width="1089" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1610097124052" />
+    <state x="183" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1610026732332">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="183" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1610026732332" />
+    <state x="123" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610095583447">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="123" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1610095583447" />
+    <state x="93" y="93" width="1350" height="648" key="DiffContextDialog" timestamp="1610028027687">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="93" y="93" width="1350" height="648" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1610028027687" />
+    <state x="172" y="172" key="FileChooserDialogImpl" timestamp="1610130549162">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="172" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1360.738@0.0.1536.834" timestamp="1610130549162" />
+    <state x="172" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1610097923538" />
+    <state x="209" y="337" key="Github.CreateGistDialog" timestamp="1609759845521">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="209" y="337" key="Github.CreateGistDialog/0.0.1536.834@0.0.1536.834" timestamp="1609759845521" />
+    <state x="168" y="137" key="RollbackChangesDialog" timestamp="1610095467379">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="168" y="137" key="RollbackChangesDialog/0.0.1536.834@0.0.1536.834" timestamp="1610095467379" />
+    <state x="0" y="62" key="SettingsEditor" timestamp="1610096181983">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="0" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1610096181983" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1610050797342">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1610050797342" />
+    <state x="834" y="89" width="610" height="707" key="dock-window-1" timestamp="1610100422869">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="834" y="89" width="610" height="707" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1610100422869" />
+    <state x="49" y="191" key="run.anything.popup" timestamp="1610095654508">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="49" y="191" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1610095654508" />
+    <state x="55" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1610097883908">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="55" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1610097883908" />
+  </component>
+</project>
